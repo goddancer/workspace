@@ -1,0 +1,136 @@
+@charset "UTF-8";
+/*scss 混合样式定义*/
+.goods {
+  display: flex;
+  position: absolute;
+  top: 174px;
+  bottom: 46px;
+  width: 100%;
+  overflow: hidden; }
+  .goods .menu-wrapper {
+    flex: 0 0 80px;
+    /*等分，缩放，占位空间*/
+    width: 80px;
+    background: #f3f5f7; }
+    .goods .menu-wrapper .menu-item {
+      display: table;
+      /*垂直居中最好的布局方式*/
+      width: 56px;
+      height: 54px;
+      line-height: 14px;
+      padding: 0 12px; }
+      .goods .menu-wrapper .menu-item.current {
+        position: relative;
+        margin-top: -1px;
+        z-index: 10;
+        background: #ffffff;
+        font-weight: 700; }
+        .goods .menu-wrapper .menu-item.current .text:after {
+          display: none; }
+      .goods .menu-wrapper .menu-item .icon {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        vertical-align: top;
+        margin-right: 2px;
+        background-size: 12px 12px;
+        background-repeat: no-repeat; }
+        .goods .menu-wrapper .menu-item .icon.decrease {
+          background-image: url("decrease_3@2x.png"); }
+          @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+            .goods .menu-wrapper .menu-item .icon.decrease {
+              background-image: url("decrease_3@3x.png"); } }
+        .goods .menu-wrapper .menu-item .icon.discount {
+          background-image: url("discount_3@2x.png"); }
+          @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+            .goods .menu-wrapper .menu-item .icon.discount {
+              background-image: url("discount_3@3x.png"); } }
+        .goods .menu-wrapper .menu-item .icon.guarantee {
+          background-image: url("guarantee_3@2x.png"); }
+          @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+            .goods .menu-wrapper .menu-item .icon.guarantee {
+              background-image: url("guarantee_3@3x.png"); } }
+        .goods .menu-wrapper .menu-item .icon.invoice {
+          background-image: url("invoice_3@2x.png"); }
+          @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+            .goods .menu-wrapper .menu-item .icon.invoice {
+              background-image: url("invoice_3@3x.png"); } }
+        .goods .menu-wrapper .menu-item .icon.special {
+          background-image: url("special_3@2x.png"); }
+          @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+            .goods .menu-wrapper .menu-item .icon.special {
+              background-image: url("special_3@3x.png"); } }
+      .goods .menu-wrapper .menu-item .text {
+        display: table-cell;
+        width: 56px;
+        vertical-align: middle;
+        font-size: 12px;
+        position: relative; }
+        .goods .menu-wrapper .menu-item .text:after {
+          position: absolute;
+          display: block;
+          width: 100%;
+          left: 0;
+          bottom: 0;
+          border-top: 1px solid rgba(7, 17, 27, 0.1);
+          content: ' '; }
+  .goods .foods-wrapper {
+    flex: 1; }
+    .goods .foods-wrapper .food-list .title {
+      padding-left: 14px;
+      height: 26px;
+      line-height: 26px;
+      border-left: 2px solid #d9dde1;
+      font-size: 12px;
+      color: #93999f;
+      background: #f3f5f7; }
+    .goods .foods-wrapper .food-list .food-item {
+      display: flex;
+      margin: 18px;
+      padding-bottom: 18px;
+      position: relative; }
+      .goods .foods-wrapper .food-list .food-item:after {
+        position: absolute;
+        display: block;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        border-top: 1px solid rgba(7, 17, 27, 0.1);
+        content: ' '; }
+      .goods .foods-wrapper .food-list .food-item:last-child {
+        margin-bottom: 0; }
+        .goods .foods-wrapper .food-list .food-item:last-child:after {
+          display: none; }
+      .goods .foods-wrapper .food-list .food-item .icon {
+        flex: 0 0 57px;
+        margin-right: 10px; }
+      .goods .foods-wrapper .food-list .food-item .content {
+        flex: 1; }
+        .goods .foods-wrapper .food-list .food-item .content .name {
+          margin: 2px 0 8px 0;
+          height: 14px;
+          line-height: 14px;
+          font-size: 14px;
+          color: #07111b; }
+        .goods .foods-wrapper .food-list .food-item .content .desc, .goods .foods-wrapper .food-list .food-item .content .extra {
+          font-size: 10px;
+          line-height: 10px;
+          color: #93999f; }
+        .goods .foods-wrapper .food-list .food-item .content .desc {
+          margin-bottom: 8px;
+          line-height: 12px; }
+        .goods .foods-wrapper .food-list .food-item .content .extra .count {
+          margin-right: 12px; }
+        .goods .foods-wrapper .food-list .food-item .content .price {
+          font-weight: 700;
+          line-height: 24px; }
+          .goods .foods-wrapper .food-list .food-item .content .price .now {
+            margin-right: 8px;
+            font-size: 14px;
+            color: #f01414; }
+          .goods .foods-wrapper .food-list .food-item .content .price .old {
+            text-decoration: line-through;
+            font-size: 10px;
+            color: #93999f; }
+
+/*# sourceMappingURL=goods.css.map */
