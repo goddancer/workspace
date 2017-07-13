@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2017chunwan-effects</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="../js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+    <div class="column_wrapper_1200">
+        <div class="springNight">
+            <div class="logo">
+                <img src="http://p1.img.cctvpic.com/photoAlbum/page/performance/img/2017/1/24/1485253852723_173.png" width="50%" class="logo_pic mousemove-item" data-z="2">
+            </div>
+            <div class="title01 mousemove-item" data-z="4"></div>
+            <div class="title02 mousemove-item" data-z="8"></div>
+            <div class="title03 mousemove-item" data-z="3"></div>
+            <div class="yanhua01 mousemove-item" data-z="6"></div>
+            <div class="yanhua02 mousemove-item" data-z="5"></div>
+            <div class="yanhua03 mousemove-item" data-z="6"></div>
+            <div class="yanhua04 mousemove-item" data-z="6"></div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            function getTransforms(translate3d) {
+                return {
+                    '-webkit-transform': translate3d,
+                    '-moz-transform': translate3d,
+                    '-ms-transform': translate3d,
+                    'transform': translate3d
+                };
+            }
+
+            function transformContainer(element, translate3d) {
+                element.css(getTransforms(translate3d));
+            }
+
+            var  noAnimate = !1;
+            var winWidth = $(window).width(),
+              winHeight = $(window).height();
+            function onMouseMove(ev) {
+                if (!noAnimate) {
+                    var left = (ev.clientX - .6 * winWidth) / (.6 * winWidth),
+                      top = (ev.clientY - .6 * winHeight) / (.6 * winWidth),
+                      elements = $(".mousemove-item");
+                    elements.each(function() {
+                        var el = $(this),
+                          pos = {
+                              left: this.style.left,
+                              top: this.style.top
+                          },
+                          rate = parseInt(el.data("z")),
+                          max = 4 * (11 - rate),
+                          toLeft = pos.left + left * max,
+                          toTop = pos.top + top * max;
+                        transformContainer(el,  "translate(" + toLeft + "px, " + toTop + "px)" );
+                    })
+                }
+            }
+            $('body').on('mousemove',onMouseMove);
+
+            function center(){
+                var center_num = $(document).width()/2 - $(window).width()/2 ;
+                window.scrollBy(center_num,0);
+
+            };
+            center()
+        });
+    </script>
+</body>
+</html>
